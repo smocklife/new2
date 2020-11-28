@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../stylesheet.css">
+        <link rel="stylesheet" href="convertiseur.css">
+        <!--début scripte binaire-->
+    <script>
+        function xdecimal()
+{
+    decimal = document.getElementById("decimal");
+    hexadecimal = document.getElementById("hexadecimal");
+    binaire = document.getElementById("binaire");
+ 
+    hexadecimal.value = (decimal.value-0).toString(16);
+    binaire.value = (decimal.value-0).toString(2);
+}
+ 
+function xhexadecimal()
+{
+    decimal = document.getElementById("decimal");
+    hexadecimal = document.getElementById("hexadecimal");
+    binaire = document.getElementById("binaire");
+ 
+    decimal.value = parseInt(hexadecimal.value,16);
+    binaire.value = (parseInt(hexadecimal.value,16)).toString(2);
+}
+ 
+function xbinaire()
+{
+    decimal = document.getElementById("decimal");
+    hexadecimal = document.getElementById("hexadecimal");
+    binaire = document.getElementById("binaire");
+ 
+    decimal.value = parseInt(binaire.value,2);
+    hexadecimal.value = (parseInt(binaire.value,2)).toString(16);
+}
+
+
+
+
+
+
+    </script>
+    <!--fin scripte binaire-->
+
+    <!--début scripte convertiseur Mo Mb-->
+
+<script>
+    function xmo(){
+
+        mo=document.getElementById("mo");
+        mb=document.getElementById("mb");
+        
+        mb.value = parseInt(mo.value/8);
+
+    }
+
+    function xmb(){
+
+        mo=document.getElementById("mo");
+        mb=document.getElementById("mb");
+        
+        mo.value=parseInt(mb.value*8);
+    }
+ 
+</script>
+    <!--fin scripte convetiseur Mo Mb-->
+
+    <!--début scripte Octets -->
+<script>
+    function convertir(){
+        var n= document.getElementById("n").value; 
+        var i= document.getElementById("i").value;
+        var nb= parseInt(n);
+        if(isNaN(nb))
+                {
+                alert("entrez un nombre svp :)");
+                }
+                else{
+                    if(i=='Ko')
+                    {nb=nb*1000;}
+                    else {if(i=='Mo')
+                        { nb=nb*1000000}
+                            else {if(i=='Go')
+                            { nb=nb*1000000000}
+                                else {if(i=='To')
+                                { nb=nb*1000000000000}
+                                else {if(i=='Po')
+                                { nb=nb*1000000000000000}
+                                }}}}
+                                
+                                    document.getElementById("Octets").innerHTML =nb+" octets";
+                                    document.getElementById("Ko").innerHTML =nb/1000+" Ko";
+                                    document.getElementById("Mo").innerHTML =nb/1000000+" Mo";
+                                    document.getElementById("Go").innerHTML =nb/1000000000+" Go";
+                                    document.getElementById("To").innerHTML =nb/1000000000000+" To";
+                                    document.getElementById("Po").innerHTML =nb/1000000000000000+" Po";
+                    }
+                      }
+ </script>
+        <!-- fin scripte Octets-->
+    </head>
+
+    
+    <body id="body">
+        <div id="top-menu">
+             <a href="..\..\index.html" id="Lien"><p>Cour <span class=colors>T.A.I</span></p></a>
+            <p><span class="colors">T</span>echnichien d'<span class="colors">A</span>ssistance <span class="colors">I</span>nformatique </p>
+        
+        <div>
+            <ul id="menu">
+                <li class="lien"><a href="#"><span class="colors">C</span>our</a>
+                    <ul class="sous">
+                        <li><a href="">test</a></li>
+                        <li><a href="">test</a></li>
+                        <li><a href="">test</a></li>
+                        
+                    </ul>
+                
+                </li>
+                <li class="lien"><a href="#"><span class="colors">U</span>tile</a>
+                    <ul class="sous">
+                        <li><a href="/Page/Utile/convertiseur.html">Convertiseur</a></li>
+                        <li><a href="">test</a></li>
+                        <li><a href="">test</a></li>
+    
+    
+                    </ul></li>
+                <li class="lien"><a href="#"><span class="colors">O</span>util</a>
+                    <ul class="sous">
+                        <li><a href="">test</a></li>
+                        <li><a href="">test</a></li>
+                        <li><a href="">test</a></li>
+    
+    
+                    </ul></li>
+            </ul>
+            </div>
+         </div>
+         <p class="titre">Convertiseur Binaire Hexadecimal</p>
+         <div id="calcul">
+                        
+         <form action="" >
+ 
+            <label for="decimal">Décimal: </label><br><input type="text" id="decimal" name="decimal" >
+            <input type="button" name="submit1" value="&#8674;" onClick="xdecimal();">
+            <br>
+            <br>
+             
+            <label for="hexadecimal">Hexadécimal: </label><br> <input type="text" id="hexadecimal" name="hexadecimal">
+            <input type="button" name="submit2" value="&#8674;" onClick="xhexadecimal();">
+             <br>
+             <br>
+            <label for="hexadecimal">Binaire: </label> <br> <input type="text" id="binaire" name="binaire">
+            <input type="button" name="submit3" value="&#8674;" onClick="xbinaire();">
+             
+            </form>
+      
+        </div>
+        <p class="titre">Convertiseur Mo to Mb</p>
+        <div id="conv">
+            <form action="">
+                <label for="mo">Mo</label><input type="text" id="mo" name="mo">
+                <input type="button" name="submit4" value="&#8674;" onClick="xmo();">
+                <br>
+                <br>
+
+                <label for="mb" >Mb</label><input type="text" id="mb" name="mb">
+                <input type="button" name="submit5" value="&#8674;" onClick="xmb();">
+           
+
+            </form>
+
+
+        </div>
+        <p class="titre">Convertiseur Octets to Pétactets</p>
+        <div id="O-to-Po">
+            <form action="formulaire">
+                <input name="text" type="text" id="n">
+                <select name="i" id="i">
+                    <option value="octet">Octet</option>
+                    <option value="Ko">Ko</option>
+                    <option value="Mo">Mo</option>
+                    <option value="Go">Go</option>
+                    <option value="To">To</option>
+                    <option value="Po">Po</option>
+                </select>
+                <input type="button" name="b" id="b" value="convertir" onClick="convertir()">
+
+                    <div id="Octets" class="type"></div>
+                    <div id="Ko"     class="type"></div>
+                    <div id="Mo"     class="type"></div>
+                    <div id="Go"     class="type"></div>
+                    <div id="To"     class="type"></div>
+                    <div id="Po"     class="type"></div>
+                 
+
+
+            </form>
+
+
+        </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        </body>
+        <footer id="footer">
+            <h3>Baptiste</h3>
+            
+        </footer>
+
+
+</html>

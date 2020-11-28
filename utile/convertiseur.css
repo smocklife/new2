@@ -1,0 +1,37 @@
+ #calcul{
+    font-size: 150%;
+    margin-left: 45%;
+    margin-right: 50%;
+}
+
+.titre{
+    font-size: 150%;
+    text-align: center;
+}
+
+
+#conv{
+    font-size: 150%;
+    margin-left: 45%;
+    margin-right: 50%;
+}
+#O-to-Po{
+    font-size:150%;
+    margin-left:45% ;
+}
+
+.type{
+    font-size:1.1vw;
+    color: red;
+    text-align: left;
+}
+
+#n{
+    font-size: 1vw;
+}
+#i{
+    font-size: 1vw;
+}
+#b{
+    font-size: 1vw;
+}
