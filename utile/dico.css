@@ -23,6 +23,7 @@
 .Letter{
     text-decoration: none;
     color:black;
+    font-size: 120%;
 }
 
 .masque{
@@ -36,6 +37,6 @@
 
 .texte{
     text-align: left;
-    font-size: 90%;
+    font-size: 100%;
 }
 
